@@ -28,13 +28,17 @@ const Navbar = () => {
 
           {/* Resume button y toggle - Contenedor derecho */}
           <div className="flex items-center gap-6">
-            <Link 
+            <a
+              href="/cv/Brenda-Yañez-CV.pdf"
+              passHref
+              legacyBehavior
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#CAC426] hover:bg-[#BCB4FF] text-[#222223] hover:text-[#FFFEEC] px-8 py-2 rounded-2xl transition flex items-center gap-2"
-              href="https://github.com/brendayw"
             >
               Resume
               <img src={downloadImage} className='w-5 h-5'></img>
-            </Link>
+            </a>
 
             {/* Toggle switch */}
             {/* <div className="theme-switch">

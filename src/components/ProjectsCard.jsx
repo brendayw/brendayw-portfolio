@@ -7,7 +7,7 @@ const projects = [
         name: "Loan Simulator",
         description: "A lightweight Java application that simulates loan repayment plans, calculating monthly payments, total interest, and amortization schedules.",
         techStack: "Java, Maven, Spring Boot, J Unit 5 & Mockito",
-        image: '/public/projects/julig.png',
+        image: '/projects/cognicare.png',
         // liveLink: "",
         githubLink: "https://github.com/brendayw/LoanSimulator"
     },
@@ -26,7 +26,7 @@ const projects = [
         description: "A cognitive health platform with React frontend and Node.js/Express backend, powered by PostgreSQL via Supabase for real-time data.",
         frontStack: "React.js · TailwindCSS · JWT Auth · Interactive dashboards",
         backStack: "Node.js · Express · REST API · PostgreSQL/Supabase (RLS enabled)",
-        image: "/public/projects/cognicare-2.png",
+        image: "/projects/cognicare-2.png",
         liveLink: "https://cognicare-frontend.vercel.app/",
         githubLink: "https://github.com/brendayw/LoanSimulator"
     },
@@ -35,7 +35,7 @@ const projects = [
         name: "Juli G - Artist Landing Page",
         description: "IN PROGRESS - A sleek, responsive React landing page for musician Juli G, designed to showcase his work and connect with fans.",
         techStack: "React.js + Vite, Tailwind CSS",
-        image: '/public/projects/julig-2.png',
+        image: '/projects/julig-2.png',
         liveLink: "https://juligpop.netlify.app/",
     }
 ]

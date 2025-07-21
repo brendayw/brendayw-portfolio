@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { useTypewriter } from '../hooks/useTypewritter';
-import image from '/portraits/brenda.png'
+import image from '../assets/portraits/brenda.png';
 import github from '../assets/icons8-github-lila.svg';
 import gmail from '../assets/icons8-gmail-lila.svg';
 import linkedin from '../assets/icons8-linkedin-lila.svg';
@@ -58,14 +58,14 @@ const Hero = () => {
                     whileHover={{ scale: 1.5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                    <Link 
+                    <a 
                         className="social-icon" 
                         href="https://github.com/brendayw" 
                         target="_blank" 
                         rel="noopener noreferrer"
                     >
                         <img src={github} alt="Github" className='w-8 h-8' />
-                    </Link>
+                    </a>
                 </motion.div>
                 
                 <motion.div
@@ -73,14 +73,14 @@ const Hero = () => {
                     whileHover={{ scale: 1.5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                    <Link
+                    <a
                         className="social-icon" 
                         href="https://linkedin.com/in/brendayw" 
                         target="_blank" 
                         rel="noopener noreferrer"
                     >
                         <img src={linkedin} alt="Linkedin" className='w-8 h-8'/>
-                    </Link>
+                    </a>
                 </motion.div>
                 
                 <motion.div
@@ -88,14 +88,14 @@ const Hero = () => {
                     whileHover={{ scale: 1.5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
-                    <Link
+                    <a
                         className="social-icon" 
                         href="mailto:brendayw97@gmail.com" 
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <img src={gmail} alt="Gmail" className='w-8 h-8' />
-                    </Link>
+                    </a>
                 </motion.div>
             </div>
         </section>
