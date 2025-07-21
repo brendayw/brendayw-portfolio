@@ -13,23 +13,23 @@ const Hero = () => {
     });
 
     return (
-        <section className='flex flex-col md:flex-row items-center justify-between gap-8 w-full py-12'>
+        <section className='flex flex-col md:flex-row items-center justify-between gap-8 w-full py-16'>
             <motion.img
-                className="relative top-[-10px] left-0 w-[25%] h-[65%] rounded-[8%]"
+                className="relative top-[25px] left-10 w-[25%] h-[55%] rounded-[8%]"
                 src={image}
                 alt="Brenda's profile"
                 animate={{
-                    y: ["0px", "-2px", "0px", "2px", "0px"], // Movimiento: arriba-abajo-centro
+                    y: ["0px", "-2px", "0px", "2px", "0px"],
                 }}
                 transition={{
-                    duration: 2.5, // Más tiempo = más lento
+                    duration: 2.5,
                     ease: "easeInOut",
                     repeat: Infinity,
                     repeatType: "loop"
                 }}
             />
         
-            <div className="relative top-[-100px] left-[200px] w-[50%]">
+            <div className="relative top-[-80px] left-[200px] w-[50%]">
                 <h1 className='text-3xl font-bold text-[#BCB4FF] p-4'>
                     Hey, I'm {animatedName}!
                     <span className="animate-blink">{cursor}</span>
@@ -52,7 +52,7 @@ const Hero = () => {
                 </motion.p>
             </div>
 
-            <div className="relative flex justify-center gap-6 top-[50px] left-[-250px] w-[25%]">
+            <div className="relative flex justify-center gap-6 top-[80px] left-[-250px] w-[25%]">
                 <motion.div
                     whileTap={{ scale: 0.9 }}
                     whileHover={{ scale: 1.5 }}

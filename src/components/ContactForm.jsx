@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
+import { useTypewriter } from '../hooks/useTypewritter';
 
 const ContactForm = () => {
     const [state, handleSubmit] = useForm("xeoqevzl");
@@ -7,8 +8,18 @@ const ContactForm = () => {
         return <p>Thanks, I'll get back to you ASAP!</p>;
     }
 
+    const { text: animatedName, cursor } = useTypewriter('touch!', {
+        delay: 100,
+        infinite: false,
+    });
+
     return (
-        <section className='relative top-5 w-full max-w-2xl mx-auto'>
+        <section className='w-full py-16 px-4 space-y-12'>
+            <h1 className='text-xl font-bold text-[#BCB4FF]'>
+                Let's get in {animatedName}
+                <span className="animate-blink">{cursor}</span>
+            </h1>
+
             <form onSubmit={handleSubmit} className='min-h-[400px] grid grid-cols-3 gap-4 shadow-lg shadow-[#222223] backdrop-blur-sm bg-[#1E1E1E] p-6 rounded-xl'>
                 <label htmlFor="name" className='text-[#CAC426] text-start font-medium col-span-1'>
                     Full Name:

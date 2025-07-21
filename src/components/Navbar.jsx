@@ -12,13 +12,13 @@ const Navbar = () => {
             <img 
               src="portraits/logo-brenda.png" 
               alt="Brenda's Logo" 
-              className="w-8 h-8" // Ajusta el tamaño según necesites
+              className="w-8 h-8"
             />
           </div>
         
           {/* Navbar links - Contenedor central */}
           <div className="flex-1 flex justify-center">
-            <div className="flex gap-8 items-center"> {/* Aumenté el gap para mejor espaciado */}
+            <div className="flex gap-8 items-center">
               <Link className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-6 py-1 hover:text-[18px] transition" to="/">Home </Link>
               <Link className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-6 py-1 hover:text-[18px] transition" to="projects">Projects</Link>
               <Link className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-6 py-1 hover:text-[18px] transition" to="/skills">Skills</Link>

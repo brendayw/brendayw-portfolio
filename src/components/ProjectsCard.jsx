@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
+import { useTypewriter } from '../hooks/useTypewritter';
 
 const projects = [
     {
@@ -16,7 +17,7 @@ const projects = [
         name: "Sudoku Solver",
         description: "A GUI-based Sudoku solver built with Java and Swing, featuring both manual puzzle input and automatic solving via a backtracking algorithm. ",
         techStack: "Java and Swing",
-        image: '/public/projects/julig.png',
+        image: '/projects/julig.png',
         // liveLink: "",
         githubLink: "https://github.com/brendayw/LoanSimulator"
     },
@@ -41,14 +42,41 @@ const projects = [
 ]
 
 const ProjectsCard = () => {
-    return (
-        <section className='relative top-5 py-4 px-6 text-center'>
+    const { text: animatedName, cursor } = useTypewriter('Projects', {
+        delay: 100,
+        infinite: false,
+    });
 
-            <div className="absolute inset-0 bg-[#BCB4FF] opacity-10 blur-lg rounded-2xl -z-10"></div>
+    return (
+        <section className='w-full py-16 px-4 space-y-12'>
+
+            <div className='w-full max-w-7xl mx-auto'>
+                <h1 className='text-xl font-bold text-[#BCB4FF]'>
+                    {animatedName}
+                    <span className="animate-blink">{cursor}</span>
+                </h1>
+
+                <motion.p
+                    className="relative top-2 text-base text-[#FFFEEC]"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                        type: "spring",
+                        damping: 10, 
+                        stiffness: 100,
+                        delay: 0.3,
+                        duration: 0.9
+                    }}
+                >
+                    Some of the work I've done.
+                </motion.p>
+            </div>
 
             {/* content */}
-            <div className='relative'>
+            <div className='w-full max-w-7xl mx-auto relative'>
                 <div>
+                    <div className="absolute inset-0 bg-[#BCB4FF] opacity-10 blur-lg rounded-2xl -z-10"></div>
+                    
                     <div className="grid grid-cols-4 gap-4">
                         {projects.map((project, index) => (
                             <div key={index} className="flex flex-col items-center">
