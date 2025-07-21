@@ -8,7 +8,7 @@ const projects = [
         name: "Loan Simulator",
         description: "A lightweight Java application that simulates loan repayment plans, calculating monthly payments, total interest, and amortization schedules.",
         techStack: "Java, Maven, Spring Boot, J Unit 5 & Mockito",
-        image: '/projects/cognicare.png',
+        image: '/projects/nodemo.png',
         // liveLink: "",
         githubLink: "https://github.com/brendayw/LoanSimulator"
     },
@@ -17,7 +17,7 @@ const projects = [
         name: "Sudoku Solver",
         description: "A GUI-based Sudoku solver built with Java and Swing, featuring both manual puzzle input and automatic solving via a backtracking algorithm. ",
         techStack: "Java and Swing",
-        image: '/projects/julig.png',
+        image: '/projects/nodemo.png',
         // liveLink: "",
         githubLink: "https://github.com/brendayw/LoanSimulator"
     },
@@ -81,7 +81,7 @@ const ProjectsCard = () => {
                         {projects.map((project, index) => (
                             <div key={index} className="flex flex-col items-center">
                                 <motion.div
-                                    className="w-[300px] h-[150px] rounded-lg shadow-lg overflow-hidden border border-[#BCB4FF]"
+                                    className="w-[300px] h-[150px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
                                     whileHover={{ scale: 1.02 }}
                                 >
                                     <img
