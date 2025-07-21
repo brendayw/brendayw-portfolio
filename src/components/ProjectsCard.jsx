@@ -34,7 +34,7 @@ const projects = [
     {
         id: "004",
         name: "Juli G - Artist Landing Page",
-        description: "IN PROGRESS - A sleek, responsive React landing page for musician Juli G, designed to showcase his work and connect with fans.",
+        description: "A sleek, responsive React landing page for musician Juli G, designed to showcase his work and connect with fans. Built for performance and aesthetics.",
         techStack: "React.js + Vite, Tailwind CSS",
         image: '/projects/julig-2.png',
         liveLink: "https://juligpop.netlify.app/",
@@ -77,17 +77,17 @@ const ProjectsCard = () => {
                 <div>
                     <div className="absolute inset-0 bg-[#BCB4FF] opacity-10 blur-lg rounded-2xl -z-10"></div>
                     
-                    <div className="grid grid-cols-4 gap-4">
+                    <div className="grid grid-cols-4 gap-12">
                         {projects.map((project, index) => (
                             <div key={index} className="flex flex-col items-center">
                                 <motion.div
-                                    className="w-full h-full relative rounded-lg shadow-lg overflow-hidden border border-[#BCB4FF]"
-                                    whileHover={{ scale: 1.05 }}
+                                    className="w-[300px] h-[150px] rounded-lg shadow-lg overflow-hidden border border-[#BCB4FF]"
+                                    whileHover={{ scale: 1.02 }}
                                 >
                                     <img
                                         src={project.image}
                                         alt={project.name}
-                                        className="w-[300px] h-[150px] object-cover rounded-md shadow-md"
+                                        className="w-full h-full object-cover rounded-md shadow-md"
                                     />
                                 </motion.div>
 
