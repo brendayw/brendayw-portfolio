@@ -1,17 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { useTypewriter } from '../hooks/useTypewritter';
 
 const ContactForm = () => {
     const [state, handleSubmit] = useForm("xeoqevzl");
-    if (state.succeeded) {
-        return <p>Thanks, I'll get back to you ASAP!</p>;
-    }
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const { text: animatedName, cursor } = useTypewriter('touch!', {
         delay: 100,
         infinite: false,
     });
+
+    const { text: animatedText, cursor: messageCursor } = useTypewriter('ASAP!', {
+        delay: 100,
+        infinite: false,
+    });
+
+    useEffect(() => {
+        if (state.succeeded) {
+            setShowSuccess(true);
+            const timer = setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [state.succeeded]);
+
+    if (showSuccess) {
+        return (
+            <section className='w-full py-16 px-4 space-y-12 text-center'>
+                <h1 className='text-xl font-bold text-[#BCB4FF]'>
+                    Thanks, I'll get back to you {animatedText}
+                    <span className="animate-blink">{messageCursor}</span>
+                </h1>
+            </section>
+        );
+    }
 
     return (
         <section className='w-full py-16 px-4 space-y-12'>

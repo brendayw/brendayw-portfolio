@@ -30,8 +30,6 @@ const Navbar = () => {
           <div className="flex items-center gap-6">
             <a
               href="/cv/Brenda-Yañez-CV.pdf"
-              passHref
-              legacyBehavior
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#CAC426] hover:bg-[#BCB4FF] text-[#222223] hover:text-[#FFFEEC] px-8 py-2 rounded-2xl transition flex items-center gap-2"
