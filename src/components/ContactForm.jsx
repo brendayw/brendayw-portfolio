@@ -38,8 +38,8 @@ const ContactForm = () => {
     }
 
     return (
-        <section className='w-full py-16 px-4 space-y-12'>
-            <h1 className='text-xl font-bold text-[#BCB4FF]'>
+        <section className='w-full py-16 px-2 sm:px-6 lg:px-8 space-y-8 md:space-y-12'>
+            <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
                 Let's get in {animatedName}
                 <span className="animate-blink">{cursor}</span>
             </h1>

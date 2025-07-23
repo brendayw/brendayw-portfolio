@@ -34,7 +34,7 @@ const projects = [
     {
         id: "004",
         name: "Juli G - Artist Landing Page",
-        description: "A sleek, responsive React landing page for musician Juli G, designed to showcase his work and connect with fans. Built for performance and aesthetics.",
+        description: "A sleek, responsive React landing page for musician Juli G, designed to showcase his work and connect with fans.",
         techStack: "React.js + Vite, Tailwind CSS",
         image: '/projects/julig-2.png',
         liveLink: "https://juligpop.netlify.app/",
@@ -48,16 +48,16 @@ const ProjectsCard = () => {
     });
 
     return (
-        <section className='w-full py-16 px-4 space-y-12'>
+        <section className='w-full py-16 px-2 sm:px-6 lg:px-8 space-y-8 md:space-y-12 mb-8 md:mb-0'>
 
             <div className='w-full max-w-7xl mx-auto'>
-                <h1 className='text-xl font-bold text-[#BCB4FF]'>
+                <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
                     {animatedName}
                     <span className="animate-blink">{cursor}</span>
                 </h1>
 
                 <motion.p
-                    className="relative top-2 text-base text-[#FFFEEC]"
+                    className="relative top-2 text-sm sm:text-base text-[#FFFEEC]"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
@@ -77,11 +77,11 @@ const ProjectsCard = () => {
                 <div>
                     <div className="absolute inset-0 bg-[#BCB4FF] opacity-10 blur-lg rounded-2xl -z-10"></div>
                     
-                    <div className="grid grid-cols-4 gap-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12">
                         {projects.map((project, index) => (
-                            <div key={index} className="flex flex-col items-center">
+                            <div key={index} className="flex flex-col items-center p-2 sm:p-0">
                                 <motion.div
-                                    className="w-[300px] h-[150px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
+                                    className="w-[280px] h-[150px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
                                     whileHover={{ scale: 1.02 }}
                                 >
                                     <img
@@ -93,20 +93,20 @@ const ProjectsCard = () => {
 
                                 {/* Project Details */}
                                 <div className="mt-2 text-center max-w-sm">
-                                    <h3 className="text-2xl sm:text-lg font-medium text-[#CAC426]">
+                                    <h3 className="text-xl m:text-2xl font-medium text-[#CAC426]">
                                         {project.name}
                                     </h3>
-                                    <p className="mt-2 text-sm sm:text-sm text-[#FFFEEC]">
+                                    <p className="mt-2 text-xs sm:text-sm text-[#FFFEEC]">
                                         {project.description}
                                     </p>
 
                                     {/* Links */}
-                                    <div className="mt-4 flex justify-center gap-4">
+                                    <div className="mt-4 flex flex-wrap justify-center gap-2 sm:gap-4">
                                         <a
                                             href={project.liveLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="bg-[#BCB4FF] text-[#222223] font-medium rounded-2xl py-1 px-4 hover:text-[#FFFEEC]"
+                                            className="text-xs sm:text-sm bg-[#BCB4FF] text-[#222223] font-medium rounded-2xl py-1 px-3 sm:px-4 hover:text-[#FFFEEC] transition-colors"
                                         >
                                             Live Demo
                                         </a>
@@ -114,7 +114,7 @@ const ProjectsCard = () => {
                                             href={project.githubLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="bg-[#CAC426] text-[#222223] font-medium rounded-2xl py-1 px-4 hover:text-[#FFFEEC]"
+                                            className="text-xs sm:text-sm bg-[#CAC426] text-[#222223] font-medium rounded-2xl py-1 px-3 sm:px-4 hover:text-[#FFFEEC] transition-colors"
                                         >
                                             GitHub Repo
                                         </a>
