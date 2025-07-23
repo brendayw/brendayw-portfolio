@@ -38,11 +38,14 @@ const ContactForm = () => {
     }
 
     return (
-        <section className='w-full py-16 px-2 sm:px-6 lg:px-8 space-y-8 md:space-y-12'>
-            <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
-                Let's get in {animatedName}
-                <span className="animate-blink">{cursor}</span>
-            </h1>
+        <section className='w-full py-16 px-2 sm:px-6 lg:px-8 space-y-8'>
+
+            <div className='w-full max-w-7xl mx-auto'>
+                <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
+                    Let's get in {animatedName}
+                    <span className="animate-blink">{cursor}</span>
+                </h1>
+            </div>
 
             <form onSubmit={handleSubmit} className='min-h-[400px] grid grid-cols-3 gap-4 shadow-lg shadow-[#222223] backdrop-blur-sm bg-[#1E1E1E] p-6 rounded-xl'>
                 <label htmlFor="name" className='text-[#CAC426] text-start font-medium col-span-1'>
