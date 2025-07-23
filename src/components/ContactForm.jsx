@@ -39,7 +39,6 @@ const ContactForm = () => {
 
     return (
         <section className='w-full py-16 px-2 sm:px-6 lg:px-8 space-y-8'>
-
             <div className='w-full max-w-7xl mx-auto'>
                 <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
                     Let's get in {animatedName}
@@ -47,8 +46,10 @@ const ContactForm = () => {
                 </h1>
             </div>
 
-            <form onSubmit={handleSubmit} className='min-h-[400px] grid grid-cols-3 gap-4 shadow-lg shadow-[#222223] backdrop-blur-sm bg-[#1E1E1E] p-6 rounded-xl'>
-                <label htmlFor="name" className='text-[#CAC426] text-start font-medium col-span-1'>
+            {/* Formulario responsive */}
+            <form onSubmit={handleSubmit} className='min-h-[400px] grid grid-cols-1 xs:grid-cols-3 gap-4 shadow-lg shadow-[#222223] backdrop-blur-sm bg-[#1E1E1E] p-6 rounded-xl'>
+                {/* Nombre */}
+                <label htmlFor="name" className='text-[#CAC426] text-start font-medium xs:col-span-1'>
                     Full Name:
                 </label>
                 <input
@@ -58,7 +59,15 @@ const ContactForm = () => {
                     name="name"
                     required
                 />
-                <label htmlFor="email" className='text-[#CAC426] text-start font-medium col-span-1'>
+                <ValidationError 
+                    prefix="Name" 
+                    field="name"
+                    errors={state.errors}
+                    className="col-span-2"
+                />
+
+                {/* Email */}
+                <label htmlFor="email" className='text-[#CAC426] text-start font-medium xs:col-span-1'>
                     Email:
                 </label>
                 <input
@@ -68,7 +77,15 @@ const ContactForm = () => {
                     name="email"
                     required
                 />
-                <label htmlFor="telefono" className='text-[#CAC426] text-start font-medium col-span-1'>
+                <ValidationError 
+                    prefix="Email" 
+                    field="email"
+                    errors={state.errors}
+                    className="col-span-2"
+                />
+
+                {/* Teléfono */}
+                <label htmlFor="telefono" className='text-[#CAC426] text-start font-medium xs:col-span-1'>
                     Phone (optional):
                 </label>
                 <input
@@ -78,12 +95,14 @@ const ContactForm = () => {
                     name="telefono"
                 />
                 <ValidationError 
-                    prefix="Email" 
-                    field="email"
+                    prefix="Telefono" 
+                    field="telefono"
                     errors={state.errors}
                     className="col-span-2"
                 />
-                <label htmlFor="message" className='text-[#CAC426] text-start font-medium col-span-1'>
+
+                {/* Mensaje */}
+                <label htmlFor="message" className='text-[#CAC426] text-start font-medium xs:col-span-1'>
                     Message:
                 </label>
                 <textarea
@@ -98,13 +117,17 @@ const ContactForm = () => {
                     errors={state.errors}
                     className="col-span-2"
                 />
-                <button 
-                    type="submit" 
-                    disabled={state.submitting} 
-                    className='col-span-1 col-start-3 bg-[#CAC426] hover:bg-[#222223] text-[#222223] hover:text-[#CAC426] font-medium rounded-2xl py-2 px-4 transition-colors hover:border-none'
-                >
-                    Submit
-                </button>
+
+                {/* Botón - Versión responsive */}
+                <div className="xs:col-span-1 xs:col-start-3 col-span-full flex justify-end">
+                    <button 
+                        type="submit" 
+                        disabled={state.submitting} 
+                        className='w-full bg-[#CAC426] hover:bg-[#222223] text-[#222223] hover:text-[#CAC426] font-medium rounded-2xl py-2 px-6 transition-colors hover:border-none'
+                    >
+                        Submit
+                    </button>
+                </div>
             </form>
         </section>
     )

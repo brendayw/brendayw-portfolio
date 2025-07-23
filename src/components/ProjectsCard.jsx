@@ -19,7 +19,7 @@ const projects = [
         techStack: "Java and Swing",
         image: '/projects/nodemo.png',
         // liveLink: "",
-        githubLink: "https://github.com/brendayw/LoanSimulator"
+        githubLink: "https://github.com/brendayw/SudokuSolver"
     },
     {
         id: "003",
@@ -29,7 +29,7 @@ const projects = [
         backStack: "Node.js · Express · REST API · PostgreSQL/Supabase (RLS enabled)",
         image: "/projects/cognicare-2.png",
         liveLink: "https://cognicare-frontend.vercel.app/",
-        githubLink: "https://github.com/brendayw/LoanSimulator"
+        githubLink: "https://github.com/brendayw/cognicare-backend"
     },
     {
         id: "004",
@@ -38,6 +38,7 @@ const projects = [
         techStack: "React.js + Vite, Tailwind CSS",
         image: '/projects/julig-2.png',
         liveLink: "https://juligpop.netlify.app/",
+        githubLink: "https://github.com/brendayw/julig-pop"
     }
 ]
 
