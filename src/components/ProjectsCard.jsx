@@ -5,12 +5,12 @@ import { useTypewriter } from '../hooks/useTypewritter';
 const projects = [
     {
         id: "001",
-        name: "Loan Simulator",
+        name: "BankIT",
         description: "A lightweight Java application that simulates loan repayment plans, calculating monthly payments, total interest, and amortization schedules.",
         techStack: "Java, Maven, Spring Boot, J Unit 5 & Mockito",
         image: '/projects/nodemo.png',
         // liveLink: "",
-        githubLink: "https://github.com/brendayw/LoanSimulator"
+        githubLink: "https://github.com/brendayw/bankIT"
     },
     {
         id: "002",
