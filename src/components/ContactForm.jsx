@@ -21,14 +21,14 @@ const ContactForm = () => {
             setShowSuccess(true);
             const timer = setTimeout(() => {
                 window.location.reload();
-            }, 3000);
+            }, 1000);
             return () => clearTimeout(timer);
         }
     }, [state.succeeded]);
 
     if (showSuccess) {
         return (
-            <section className='w-full py-16 px-4 space-y-12 text-center'>
+            <section className='w-full min-h-screen py-16 px-4 space-y-12 text-center'>
                 <h1 className='text-xl font-bold text-[#BCB4FF]'>
                     Thanks, I'll get back to you {animatedText}
                     <span className="animate-blink">{messageCursor}</span>

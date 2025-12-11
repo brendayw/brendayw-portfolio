@@ -6,7 +6,7 @@ import Contact from './Contact.jsx';
 
 const Home = () => {
     return (
-        <section id="home" className='w-full'>
+        <section id="home" className='w-full scroll-smooth'>
             <Hero />
             <Projects />
             <Skills />
