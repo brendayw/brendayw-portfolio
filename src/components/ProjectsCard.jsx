@@ -2,44 +2,74 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { useTypewriter } from '../hooks/useTypewritter';
 
+const iconClasses = {     
+    // Iconos personalizados - usar SVG público o alternativas 
+    java: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+    spring: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg",
+    maven: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg", 
+    react: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    node: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    express: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+    postgre: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    junit: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain.svg",
+    tailwind: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    restapi: "https://cdn-icons-png.flaticon.com/512/2164/2164832.png",
+    mysql: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    supabase: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg",
+    jwt: "https://cdn.worldvectorlogo.com/logos/jwt-3.svg",
+    dashboards: "https://cdn-icons-png.flaticon.com/512/1828/1828643.png",
+    weatherapi: "https://cdn-icons-png.flaticon.com/512/1163/1163661.png",
+    twilio: "https://cdn.worldvectorlogo.com/logos/twilio.svg",
+    scheduler: "https://cdn-icons-png.flaticon.com/512/747/747310.png" 
+};
+
+
 const projects = [
-    {
-        id: "001",
-        name: "BankIT",
-        description: "A lightweight Java application that simulates loan repayment plans, calculating monthly payments, total interest, and amortization schedules.",
-        techStack: "Java, Maven, Spring Boot, J Unit 5 & Mockito",
-        image: '/projects/nodemo.png',
+    {   id: "001", 
+        name: "BankIT", 
+        description: "A lightweight Java application that simulates loan repayment plans, calculating monthly payments, total interest, and amortization schedules.", 
+        techStack: ["java", "maven", "spring", "junit", "mysql", "jwt"], 
+        image: '/projects/nodemo.png', 
+        //detailsLink: "/cognicare", 
+        // liveLink: "", 
+        githubLink: "https://github.com/brendayw/bankIT" 
+    },
+    {   id: "002", 
+        name: "CogniCare", 
+        description: "A cognitive health platform with React frontend and Node.js/Express backend, powered by PostgreSQL via Supabase for real-time data.", 
+        techStack: ["react", "tailwind", "jwt", "node", "express", "postgre", "supabase"], 
+        image: "/projects/cognicare-2.png", 
+        //detailsLink: "/cognicare", 
+        liveLink: "https://cognicare-frontend.vercel.app/", 
+        githubLink: "https://github.com/brendayw/cognicare-backend" 
+    },
+    {   id: "003", 
+        name: "AlertIT", 
+        description: "It is a Java-based weather alert system that detects heavy rain or strong wind conditions in a specific region of Argentina and automatically sends notifications via WhatsApp.", 
+        techStack: ["java", "spring", "weatherapi", "twilio", "scheduler"], 
+        image: '/projects/nodemo.png', 
+        //detailsLink: "/alertit", 
+        // liveLink: "", 
+        githubLink: "https://github.com/brendayw/AlertIT" 
+    },
+    {   id: "004", 
+        name: "Sudoku Solver", 
+        description: "A GUI-based Sudoku solver built with Java and Swing, featuring both manual puzzle input and automatic solving via a backtracking algorithm. ", 
+        techStack: ["java"], 
+        image: '/projects/nodemo.png', 
+        //detailsLink: "/sudokusolver",
         // liveLink: "",
-        githubLink: "https://github.com/brendayw/bankIT"
+        githubLink: "https://github.com/brendayw/SudokuSolver" 
     },
-    {
-        id: "002",
-        name: "Sudoku Solver",
-        description: "A GUI-based Sudoku solver built with Java and Swing, featuring both manual puzzle input and automatic solving via a backtracking algorithm. ",
-        techStack: "Java and Swing",
-        image: '/projects/nodemo.png',
-        // liveLink: "",
-        githubLink: "https://github.com/brendayw/SudokuSolver"
-    },
-    {
-        id: "003",
-        name: "CogniCare (Full-Stack)",
-        description: "A cognitive health platform with React frontend and Node.js/Express backend, powered by PostgreSQL via Supabase for real-time data.",
-        frontStack: "React.js · TailwindCSS · JWT Auth · Interactive dashboards",
-        backStack: "Node.js · Express · REST API · PostgreSQL/Supabase (RLS enabled)",
-        image: "/projects/cognicare-2.png",
-        liveLink: "https://cognicare-frontend.vercel.app/",
-        githubLink: "https://github.com/brendayw/cognicare-backend"
-    },
-    {
-        id: "004",
-        name: "Juli G - Artist Landing Page",
-        description: "A sleek, responsive React landing page for musician Juli G, designed to showcase his work and connect with fans.",
-        techStack: "React.js + Vite, Tailwind CSS",
-        image: '/projects/julig-2.png',
-        liveLink: "https://juligpop.netlify.app/",
-        githubLink: "https://github.com/brendayw/julig-pop"
-    }
+    // {
+    //     id: "005",
+    //     name: "Juli G - Artist Landing Page",
+    //     description: "A sleek, responsive React landing page for musician Juli G, designed to showcase his work and connect with fans.",
+    //     techStack: ["react", "tailwind" ],
+    //     image: '/projects/julig-2.png',
+    //     liveLink: "https://juligpop.netlify.app/",
+    //     githubLink: "https://github.com/brendayw/julig-pop"
+    // }
 ]
 
 const ProjectsCard = () => {
@@ -76,58 +106,99 @@ const ProjectsCard = () => {
             {/* content */}
             <div className='w-full max-w-7xl mx-auto relative'>
                 <div>
+                    {/* glow violeta */}
                     <div className="absolute inset-0 bg-[#BCB4FF] opacity-10 blur-lg rounded-2xl -z-10"></div>
                     
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12">
+                    {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12"> */}
+                    
+                    <div className='flex flex-col gap-8'>
                         {projects.map((project, index) => (
-                            <div key={index} className="flex flex-col items-center p-2 sm:p-0">
+                            <div key={index} className="flex flex-row items-start p-2">
+                                {/* Imagen */}
                                 <motion.div
-                                    className="w-[280px] h-[150px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
-                                    whileHover={{ scale: 1.02 }}
+                                className="w-full max-w-[400px] h-[225px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
+                                whileHover={{ scale: 1.02 }}
                                 >
-                                    <img
-                                        src={project.image}
-                                        alt={project.name}
-                                        className="w-full h-full object-cover rounded-md shadow-md"
-                                    />
+                                <img
+                                    src={project.image}
+                                    alt={project.name}
+                                    className="w-full h-full object-cover rounded-md shadow-md"
+                                />
                                 </motion.div>
 
-                                {/* Project Details */}
-                                <div className="mt-2 text-center max-w-sm">
-                                    <h3 className="text-xl m:text-2xl font-medium text-[#CAC426]">
-                                        {project.name}
-                                    </h3>
-                                    <p className="mt-2 text-xs sm:text-sm text-[#FFFEEC]">
-                                        {project.description}
-                                    </p>
+                                {/* Contenido principal */}
+                                <div className="flex flex-col max-w-[500px] ml-10 flex-grow">
+                                <h3 className="text-xl sm:text-2xl font-medium text-[#CAC426]">
+                                    {project.name}
+                                </h3>
+                                <p className="mt-2 text-sm sm:text-base text-[#FFFEEC]">
+                                    {project.description}
+                                </p>
 
-                                    {/* Links */}
-                                    <div className="mt-4 flex flex-wrap justify-center gap-2 sm:gap-4">
+                                <div className="flex items-center gap-3 mt-4 flex-wrap">
+                                    {project.techStack.map((tech, idx) => {
+                                    const icon = iconClasses[tech];
+                                    const isDevicon = typeof icon === "string" && icon.startsWith("devicon");
+
+                                    return (
+                                        <div key={idx} className="flex items-center gap-2 border border-[#CAC426] rounded-lg w-28 h-8 whitespace-nowrap px-4 py-1">
+                                        {isDevicon ? (
+                                            <i className={`${icon} text-sm`} title={tech}></i>
+                                        ) : (
+                                            <img 
+                                            src={icon} 
+                                            alt={tech} 
+                                            className="w-5 h-5 object-contain" 
+                                            title={tech}
+                                            />
+                                        )}
+                                        <span className="text-xs text-white truncate">{tech}</span>
+                                        </div>
+                                    );
+                                    })}
+                                </div>
+                                </div>
+
+                                {/* Botones en columna a la derecha */}
+                                <div className="flex flex-col gap-3 ml-6">
+                                    {project.detailsLink && project.detailsLink.trim() !== "" && (
                                         <a
-                                            href={project.liveLink}
+                                            href={project.detailsLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-xs sm:text-sm bg-[#BCB4FF] text-[#222223] font-medium rounded-2xl py-1 px-3 sm:px-4 hover:text-[#FFFEEC] transition-colors"
+                                            className="w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#CAC426] text-[#222223] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
+                                        >
+                                            More details
+                                        </a>
+                                    )}
+
+                                    <a
+                                        href={project.githubLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#222223] text-[#CAC426] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
+                                    >
+                                        GitHub Repo
+                                    </a>
+
+                                    {project.liveLink && project.liveLink.trim() !== "" && (
+                                        <a
+                                        href={project.liveLink}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#BCB4FF] text-[#222223] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
                                         >
                                             Live Demo
                                         </a>
-                                        <a
-                                            href={project.githubLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-xs sm:text-sm bg-[#CAC426] text-[#222223] font-medium rounded-2xl py-1 px-3 sm:px-4 hover:text-[#FFFEEC] transition-colors"
-                                        >
-                                            GitHub Repo
-                                        </a>
-                                    </div>
+                                    )}
                                 </div>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+                            ))}
+                    </div> 
+                </div> 
+            </div> 
+        </section> 
+    ); 
 }
 
 export default ProjectsCard;
