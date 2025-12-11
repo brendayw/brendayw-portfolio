@@ -3,9 +3,9 @@ import ProjectsCard from '../components/ProjectsCard';
 
 const Projects = () => {
     return (
-        <div className='w-full'>
+        <section id="projects" className='w-full'>
             <ProjectsCard />
-        </div>
+        </section>
     );
 }
 

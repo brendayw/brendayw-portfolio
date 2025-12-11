@@ -3,9 +3,9 @@ import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
      return (
-        <div className='w-full'>
+        <section id="contact" className='w-full'>
             <ContactForm />
-        </div>
+        </section>
     );
 }
 
