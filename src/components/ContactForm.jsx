@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { useTypewriter } from '../hooks/useTypewritter';
 
@@ -21,7 +21,7 @@ const ContactForm = () => {
             setShowSuccess(true);
             const timer = setTimeout(() => {
                 window.location.reload();
-            }, 5000);
+            }, 3000);
             return () => clearTimeout(timer);
         }
     }, [state.succeeded]);
@@ -38,7 +38,7 @@ const ContactForm = () => {
     }
 
     return (
-        <section className='w-full py-16 px-2 sm:px-6 lg:px-8 space-y-8'>
+        <section className='w-[full] min-h-screen flex flex-col justify-center items-center py-16 px-2 sm:px-6 lg:px-8 space-y-8'>
             <div className='w-full max-w-7xl mx-auto'>
                 <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
                     Let's get in {animatedName}
@@ -47,7 +47,8 @@ const ContactForm = () => {
             </div>
 
             {/* Formulario responsive */}
-            <form onSubmit={handleSubmit} className='min-h-[400px] grid grid-cols-1 xs:grid-cols-3 gap-4 shadow-lg shadow-[#222223] backdrop-blur-sm bg-[#1E1E1E] p-6 rounded-xl'>
+            <form onSubmit={handleSubmit} className='w-full max-w-[600px] min-h-[400px] items-center grid grid-cols-1 xs:grid-cols-3 gap-4 shadow-lg shadow-[#222223] backdrop-blur-sm bg-[#1E1E1E] p-6 rounded-xl'>
+                
                 {/* Nombre */}
                 <label htmlFor="name" className='text-[#CAC426] text-start font-medium xs:col-span-1'>
                     Full Name:

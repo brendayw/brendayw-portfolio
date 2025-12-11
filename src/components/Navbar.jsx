@@ -37,10 +37,10 @@ const Navbar = () => {
           {/* Navbar links - Contenedor central */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="flex gap-4 lg:gap-8 items-center">
-              <Link className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition" to="/">Home </Link>
-              <Link className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition" to="projects">Projects</Link>
-              <Link className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition" to="/skills">Skills</Link>
-              <Link className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition" to="contact">Contact</Link>
+              <a href='/' className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition">Home </a>
+              <a href='#projects' className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition">Projects</a>
+              <a href='#skills' className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition">Skills</a>
+              <a href='#contact' className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition">Contact</a>
             </div>
           </div>
 
@@ -62,34 +62,33 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-[#222223] pb-4">
           <div className="px-2 pt-2 space-y-1">
-            <Link 
+            <a
+              href='/' 
               onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
-              to="/"
             >
               Home
-            </Link>
-            <Link 
+            </a>
+            <a href='#projects'
               onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
-              to="projects"
             >
               Projects
-            </Link>
-            <Link 
+            </a>
+            <a 
+              href='#skills'
               onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
-              to="/skills"
             >
               Skills
-            </Link>
-            <Link 
+            </a>
+            <a 
+              href='#contact'
               onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
-              to="contact"
             >
               Contact
-            </Link>
+            </a>
             <a
               href="/cv/CV Brenda Yañez - Backend Developer 2025.pdf"
               target="_blank"

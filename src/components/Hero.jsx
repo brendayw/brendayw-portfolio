@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { useTypewriter } from '../hooks/useTypewritter';
 import image from '../assets/portraits/brenda.png';
