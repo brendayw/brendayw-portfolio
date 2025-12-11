@@ -3,9 +3,9 @@ import TechStack from '../components/TechStack';
 
 const Skills = () => {
     return (
-        <div className='w-full'>
+        <section id="skills" className='w-full'>
             <TechStack />
-        </div>
+        </section>
     );
 }
 
