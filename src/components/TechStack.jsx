@@ -39,8 +39,8 @@ const TechStack = () => {
         <span className="animate-blink">{cursor}</span>
       </h1>
 
-      <div className='w-full max-w-7xl mx-auto relative top-4'>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-6">
+      <div className='flex justify-center items-start py-10'>
+        <div className="max-w-[700px] w-full grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4">
           {Object.entries(skills).map(([category, items]) => (
             <React.Fragment key={category}>
               {/* Categoría - Sin cambios */}
@@ -56,7 +56,7 @@ const TechStack = () => {
               </motion.div>
 
               {/* Contenedor de skills - Versión responsive */}
-              <div className="md:col-span-3">
+              <div className="md:col-span-3 w-full">
                 {/* Mobile: Flex que se ajusta automáticamente */}
                 <div className="flex md:hidden gap-2 flex-wrap">
                   {items.map((skill, index) => (
