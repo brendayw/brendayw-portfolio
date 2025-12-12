@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { useTypewriter } from '../hooks/useTypewritter';
 import image from '../assets/portraits/brenda.png';
@@ -13,7 +12,7 @@ const Hero = () => {
     });
 
     return (
-        <section id="hero" className='flex flex-col md:flex-row items-center justify-between w-full py-8 md:py-16 px-4 sm:px-6 lg:px-8'>
+        <section id="hero" className='min-h-screen flex flex-col md:flex-row items-center justify-between w-full py-8 md:py-16 px-4 sm:px-6 lg:px-8'>
             
             <motion.div 
                 className="relative top-10 w-[60%] min-w-[180px] max-w-[320px] md:max-w-[380px] aspect-square mb-12 md:mb-0"

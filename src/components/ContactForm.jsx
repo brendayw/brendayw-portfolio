@@ -38,7 +38,7 @@ const ContactForm = () => {
     }
 
     return (
-        <section className='w-[full] min-h-screen flex flex-col justify-center items-center py-16 px-2 sm:px-6 lg:px-8 space-y-8'>
+        <section className='w-full min-h-screen flex flex-col justify-center items-center py-14 px-2 sm:px-6 lg:px-8 space-y-6'>
             <div className='w-full max-w-7xl mx-auto'>
                 <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
                     Let's get in {animatedName}

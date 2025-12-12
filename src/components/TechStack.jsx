@@ -33,7 +33,7 @@ const TechStack = () => {
   });
   
   return (
-    <section className="w-full py-16 px-2 sm:px-4 lg:px-6 mb-8 md:mb-0">
+    <section className="w-full py-14 px-2 sm:px-4 lg:px-6 mb-8 md:mb-0">
       <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
         {animatedName}
         <span className="animate-blink">{cursor}</span>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { motion } from "framer-motion";
 import { useTypewriter } from '../hooks/useTypewritter';
 
@@ -79,7 +79,7 @@ const ProjectsCard = () => {
     });
 
     return (
-        <section className='w-full py-16 px-2 sm:px-6 lg:px-8 space-y-8 md:space-y-12 mb-8 md:mb-0'>
+        <section className='w-full py-14 px-2 sm:px-6 lg:px-8 space-y-8 md:space-y-12 mb-8 md:mb-0'>
 
             <div className='w-full max-w-7xl mx-auto'>
                 <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
@@ -107,66 +107,71 @@ const ProjectsCard = () => {
             <div className='w-full max-w-7xl mx-auto relative'>
                 <div>
                     {/* glow violeta */}
-                    <div className="absolute inset-0 bg-[#BCB4FF] opacity-10 blur-lg rounded-2xl -z-10"></div>
-                    
-                    {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12"> */}
-                    
+                    <div className="absolute inset-0 bg-[#BCB4FF] opacity-5 blur-lg rounded-2xl -z-10"></div>
+                                     
                     <div className='flex flex-col gap-8'>
                         {projects.map((project, index) => (
-                            <div key={index} className="flex flex-row items-start p-2">
+                            <div key={index} className="flex flex-col md:flex-row items-start p-2 gap-6">
                                 {/* Imagen */}
                                 <motion.div
-                                className="w-full max-w-[400px] h-[225px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
-                                whileHover={{ scale: 1.02 }}
+                                    className="w-full md:w-[400px] h-[225px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
+                                    whileHover={{ scale: 1.02 }}
                                 >
-                                <img
-                                    src={project.image}
-                                    alt={project.name}
-                                    className="w-full h-full object-cover rounded-md shadow-md"
-                                />
+                                    <img
+                                        src={project.image}
+                                        alt={project.name}
+                                        className="w-full h-full object-cover rounded-md shadow-md"
+                                    />
                                 </motion.div>
 
                                 {/* Contenido principal */}
-                                <div className="flex flex-col max-w-[500px] ml-10 flex-grow">
-                                <h3 className="text-xl sm:text-2xl font-medium text-[#CAC426]">
-                                    {project.name}
-                                </h3>
-                                <p className="mt-2 text-sm sm:text-base text-[#FFFEEC]">
-                                    {project.description}
-                                </p>
+                                <div className="flex flex-col max-w-[500px] flex-grow">
+                                    <h3 className="text-xl sm:text-2xl font-medium text-[#CAC426]">
+                                        {project.name}
+                                    </h3>
+                                    <p className="mt-2 text-sm sm:text-base text-[#FFFEEC]">
+                                        {project.description}
+                                    </p>
 
-                                <div className="flex items-center gap-3 mt-4 flex-wrap">
-                                    {project.techStack.map((tech, idx) => {
-                                    const icon = iconClasses[tech];
-                                    const isDevicon = typeof icon === "string" && icon.startsWith("devicon");
+                                    <div className="flex items-center gap-2 mt-2 flex-wrap w-full md:w-auto justify-center md:justify-start">
+                                        {project.techStack.map((tech, idx) => {
+                                        const icon = iconClasses[tech];
+                                        const isDevicon = typeof icon === "string" && icon.startsWith("devicon");
 
-                                    return (
-                                        <div key={idx} className="flex items-center gap-2 border border-[#CAC426] rounded-lg w-28 h-8 whitespace-nowrap px-4 py-1">
-                                        {isDevicon ? (
-                                            <i className={`${icon} text-sm`} title={tech}></i>
-                                        ) : (
-                                            <img 
-                                            src={icon} 
-                                            alt={tech} 
-                                            className="w-5 h-5 object-contain" 
-                                            title={tech}
-                                            />
-                                        )}
-                                        <span className="text-xs text-white truncate">{tech}</span>
-                                        </div>
-                                    );
-                                    })}
-                                </div>
+                                        return (
+                                            <React.Fragment key={idx}>
+                                                {/* Mobile: solo ícono */}
+                                                <div className="w-9 h-9 mt-2 flex items-center justify-center rounded-full bg-[#222223] md:hidden" title={tech}>
+                                                    {isDevicon ? (
+                                                        <i className={`${icon} block m-auto`} style={{ fontSize: '16px' }}></i>
+                                                    ) : (
+                                                        <img src={icon} alt={tech} className="w-5 h-5 object-contain"/>
+                                                    )}
+                                                </div>
+
+                                                {/* Desktop: ícono + texto */}
+                                                <div className="hidden md:flex items-center gap-2 border border-[#CAC426] rounded-lg w-28 h-8 whitespace-nowrap px-4 py-1">
+                                                    {isDevicon ? (
+                                                        <i className={`${icon} text-sm`} title={tech}></i>
+                                                    ) : (
+                                                        <img src={icon} alt={tech} className="w-5 h-5 object-contain" title={tech}/>
+                                                    )}
+                                                    <span className="text-xs text-white truncate">{tech}</span>
+                                                </div>
+                                            </React.Fragment>
+                                        );
+                                        })}
+                                    </div>
                                 </div>
 
                                 {/* Botones en columna a la derecha */}
-                                <div className="flex flex-col gap-3 ml-6">
+                                <div className="flex flex-row md:flex-col gap-3 mt-2 md:mt-0 justify-center items-center flex-wrap w-full md:w-auto">
                                     {project.detailsLink && project.detailsLink.trim() !== "" && (
                                         <a
                                             href={project.detailsLink}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#CAC426] text-[#222223] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
+                                            className="px-4 py-2 md:w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#CAC426] text-[#222223] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
                                         >
                                             More details
                                         </a>
@@ -176,7 +181,7 @@ const ProjectsCard = () => {
                                         href={project.githubLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#222223] text-[#CAC426] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
+                                        className="px-4 py-2 md:w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#222223] text-[#CAC426] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
                                     >
                                         GitHub Repo
                                     </a>
@@ -186,7 +191,7 @@ const ProjectsCard = () => {
                                         href={project.liveLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#BCB4FF] text-[#222223] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
+                                        className="px-4 py-2 md:w-[125px] h-[35px] flex items-center justify-center text-xs sm:text-sm bg-[#BCB4FF] text-[#222223] font-medium rounded-2xl hover:text-[#FFFEEC] transition-colors"
                                         >
                                             Live Demo
                                         </a>
