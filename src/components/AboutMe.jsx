@@ -111,10 +111,13 @@ const AboutMe = () => {
                     style={{ perspective: 1000 }}
                 >
                     <motion.div
-                        className="relative w-full h-[475px] md:h-96  rounded-3xl"
+                        className="relative w-full md:96 rounded-3xl"
                         animate={{ rotateY: flipped ? 180 : 0 }}
                         transition={{ duration: 0.6 }}
-                        style={{ transformStyle: "preserve-3d" }}
+                        style={{ 
+                            height: 'calc(550px - 20px)',
+                            transformStyle: "preserve-3d" 
+                        }}
                     >
                         {/* Front: Texto */}
                         <div className="absolute w-full h-full bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 flex flex-col justify-center"
