@@ -1,11 +1,18 @@
-import React from 'react';
+import { motion } from "framer-motion";
 import ContactForm from '../components/ContactForm';
 
 const Contact = () => {
      return (
-        <section id="contact" className='w-full'>
+        <motion.section
+            id="contact" 
+            className='w-full'
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+        >
             <ContactForm />
-        </section>
+        </motion.section>
     );
 }
 

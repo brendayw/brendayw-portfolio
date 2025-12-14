@@ -33,11 +33,18 @@ const TechStack = () => {
   });
   
   return (
-    <section className="w-full py-14 px-2 sm:px-4 lg:px-6 mb-8 md:mb-0">
-      <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
-        {animatedName}
-        <span className="animate-blink">{cursor}</span>
-      </h1>
+    <section className="w-full md:min-h-screen py-14 px-2 sm:px-4 lg:px-6 md:mb-0">
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF] text-center md:text-left hover:text-[#CAC426]'>
+          {animatedName}
+          <span className="animate-blink">{cursor}</span>
+        </h1>
+      </motion.div>
+      
 
       <div className='flex justify-center items-start py-10'>
         <div className="max-w-[700px] w-full grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4">
@@ -105,7 +112,7 @@ const TechStack = () => {
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

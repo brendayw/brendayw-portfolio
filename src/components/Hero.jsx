@@ -37,22 +37,50 @@ const Hero = () => {
         delay: 100,
         infinite: false,
     });
+
+    const container = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+            staggerChildren: 0.15
+            }
+        }
+    };
     
     return (
-        <section id="hero" className='md:min-h-screen flex flex-col md:flex-row items-center justify-between w-full py-8 md:py-16 px-4 sm:px-6 lg:px-8'>
+        <motion.section
+            id="hero" 
+            className='md:min-h-screen flex flex-col md:flex-row items-center justify-between w-full py-8 md:py-16 px-4 sm:px-6 lg:px-8'
+            variants={container}
+            initial="hidden"
+            animate="visible"
+        >
                     
-            <div className='relative flex flex-col md:flex-row items-start md:items-center gap-8 mt-28 md:mt-0'>
+            <motion.div 
+                className='relative flex flex-col md:flex-row items-start md:items-center gap-8 mt-28 md:mt-0'
+                variants={container}
+            >
                 <div className="relative w-full md:w-[70%] text-center md:text-left">
-                    {/* md:left-20 mb-12 md:mb-0 md:px-8 */}
 
-                    <h1 className='text-lg italic text-[#FFFEEC] mb-4'>
+                    <motion.h1 
+                        className='text-lg italic text-[#FFFEEC] mb-4'
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                         Hi, my name is 
-                    </h1>
+                    </motion.h1>
 
-                    <h2 className='text-4xl sm:text-6xl md:text-7xl font-bold italic text-[#CAC426] mb-8 md:mb-6 hover:text-[#BCB4FF]'>
+                    <motion.h2
+                        className='text-4xl sm:text-6xl md:text-7xl font-bold italic text-[#CAC426] mb-8 md:mb-6 hover:text-[#BCB4FF]'
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: 0. }}
+                    >
                         Brenda {animatedName}.
                         <span className="animate-blink">{cursor}</span>
-                    </h2>
+                    </motion.h2>
 
                     <motion.p
                         className="text-md sm:text-2xl text-[#FFFEEC] leading-relaxed"
@@ -73,7 +101,10 @@ const Hero = () => {
                 </div>
 
                 {/* Iconos sociales - Responsive */}
-                <div className="flex flex-row md:flex-col gap-8 md:gap-8 mt-8 md:mt-0 md:ml-36">
+                <motion.div 
+                    className="flex flex-row md:flex-col gap-8 md:gap-8 mt-8 md:mt-0 md:ml-36"
+                    variants={container}
+                >
                     {icons.map((item, index) => (
                         <motion.div
                             key={index}
@@ -82,11 +113,14 @@ const Hero = () => {
                             whileHover={{ scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 300, damping: 15 }}
                         >
-                            <a 
+                            <motion.a
                                 href={item.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center p-1"
+                                variants={item}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
                                 onMouseEnter={() => setHovered(index)}
                                 onMouseLeave={() => setHovered(null)}
                             >
@@ -102,12 +136,12 @@ const Hero = () => {
                                 >
                                     {item.name}
                                 </span>
-                            </a>
+                            </motion.a>
                         </motion.div>
                     ))}
-                </div>
-            </div>
-        </section>
+                </motion.div>
+            </motion.div>
+        </motion.section>
     );
 };
 

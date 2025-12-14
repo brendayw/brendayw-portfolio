@@ -61,15 +61,6 @@ const projects = [
         // liveLink: "",
         githubLink: "https://github.com/brendayw/SudokuSolver" 
     },
-    // {
-    //     id: "005",
-    //     name: "Juli G - Artist Landing Page",
-    //     description: "A sleek, responsive React landing page for musician Juli G, designed to showcase his work and connect with fans.",
-    //     techStack: ["react", "tailwind" ],
-    //     image: '/projects/julig-2.png',
-    //     liveLink: "https://juligpop.netlify.app/",
-    //     githubLink: "https://github.com/brendayw/julig-pop"
-    // }
 ]
 
 const ProjectsCard = () => {
@@ -78,44 +69,64 @@ const ProjectsCard = () => {
         infinite: false,
     });
 
-    return (
-        <section className='w-full py-14 px-2 sm:px-6 lg:px-8 space-y-8 md:space-y-12 mb-8 md:mb-0'>
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.08
+            }
+        }
+    };
 
-            <div className='w-full max-w-7xl mx-auto'>
-                <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.45, ease: "easeOut" }
+        }
+    };
+
+    return (
+        <section className='w-full md:min-h-screen py-14 px-2 sm:px-6 lg:px-8 space-y-8 md:space-y-12 mb-8 md:mb-0'>
+
+            <motion.div 
+                className="w-full max-w-7xl mx-auto relative"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+            >
+                <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF] text-center md:text-left hover:text-[#CAC426]'>
                     {animatedName}
                     <span className="animate-blink">{cursor}</span>
                 </h1>
+            </motion.div>
 
-                <motion.p
-                    className="relative top-2 text-sm sm:text-base text-[#FFFEEC]"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                        type: "spring",
-                        damping: 10, 
-                        stiffness: 100,
-                        delay: 0.3,
-                        duration: 0.9
-                    }}
-                >
-                    Some of the work I've done.
-                </motion.p>
-            </div>
-
-            {/* content */}
-            <div className='w-full max-w-7xl mx-auto relative'>
+            {/* Projects List */}
+            <motion.div 
+                className='w-full max-w-7xl mx-auto relative'
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+            >
                 <div>
                     {/* glow violeta */}
                     <div className="absolute inset-0 bg-[#BCB4FF] opacity-5 blur-lg rounded-2xl -z-10"></div>
                                      
                     <div className='flex flex-col gap-8'>
                         {projects.map((project, index) => (
-                            <div key={index} className="flex flex-col md:flex-row items-start p-2 gap-6">
+                            <motion.div
+                                key={index} 
+                                className="flex flex-col md:flex-row items-start p-2 gap-6"
+                                variants={itemVariants}
+                            >
                                 {/* Imagen */}
                                 <motion.div
                                     className="w-full md:w-[400px] h-[225px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
                                     whileHover={{ scale: 1.02 }}
+                                    transition={{ type: "spring", stiffness: 120 }}
                                 >
                                     <img
                                         src={project.image}
@@ -129,6 +140,7 @@ const ProjectsCard = () => {
                                     <h3 className="text-xl sm:text-2xl font-medium text-[#CAC426]">
                                         {project.name}
                                     </h3>
+
                                     <p className="mt-2 text-sm sm:text-base text-[#FFFEEC]">
                                         {project.description}
                                     </p>
@@ -166,6 +178,7 @@ const ProjectsCard = () => {
 
                                 {/* Botones en columna a la derecha */}
                                 <div className="flex flex-row md:flex-col gap-3 mt-2 md:mt-0 justify-center items-center flex-wrap w-full md:w-auto">
+                                    
                                     {project.detailsLink && project.detailsLink.trim() !== "" && (
                                         <a
                                             href={project.detailsLink}
@@ -197,11 +210,11 @@ const ProjectsCard = () => {
                                         </a>
                                     )}
                                 </div>
-                            </div>
+                            </motion.div>
                             ))}
                     </div> 
                 </div> 
-            </div> 
+            </motion.div> 
         </section> 
     ); 
 }

@@ -13,17 +13,27 @@ const AboutMe = () => {
         infinite: false,
     });
 
+    const textVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" } })
+    };
+
     return (
 
-        <section className="w-full md:min-h-screen py-16 px-4 sm:px-6 lg:px-8 md:mb-8">
+        <section className="w-full md:min-h-screen py-16 px-4 sm:px-6 lg:px-8 md:mb-10">
             
             {/* Titulo */}
-            <div className="w-full max-w-7xl mx-auto mb-10">
+            <motion.div
+                className="w-full max-w-7xl mx-auto mb-10"
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
                 <h1 className="text-2xl sm:text-3xl font-bold text-[#BCB4FF] text-center md:text-left hover:text-[#CAC426]">
                     A little {animatedName}
                     <span className="animate-blink">{cursor}</span>
                 </h1>
-            </div>
+            </motion.div>
 
             {/* Desktop - Contenido */}
             <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-12 items-center">
@@ -123,18 +133,33 @@ const AboutMe = () => {
                         <div className="absolute w-full h-full bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 flex flex-col justify-center"
                              style={{ backfaceVisibility: "hidden" }}
                         >
-                            <p className="text-justify mb-2">
+                            <motion.p 
+                                className="text-justify mb-2"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6 }}
+                            >
                                 I am a <span className="text-[#CAC426] font-semibold">Junior Software Developer</span> with a strong interest in backend development. I work mainly with Java and Spring Boot, building REST APIs and backend logic with a
                                 focus on clarity, maintainability, and good practices.
-                            </p>
-                            <p className="text-justify mb-2">
+                            </motion.p>
+                            <motion.p 
+                                className="text-justify mb-2"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6 }}
+                            >
                                 I hold an <span className="text-[#CAC426] font-semibold">Associate Degree in Programming</span> and have built backend projects involving data persistence,
                                 validations, and business logic. I enjoy understanding how systems
                                 work behind the scenes and how different components interact.
-                            </p>
-                            <p className="text-center text-[#BCB4FF] font-medium italic">
+                            </motion.p>
+                            <motion.p 
+                                className="text-center text-[#BCB4FF] font-medium italic"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.6 }}
+                            >
                                 👆 Peek-a-boo!
-                            </p>
+                            </motion.p>
                         </div>
 
                         {/* Back: Imagen */}
@@ -153,8 +178,7 @@ const AboutMe = () => {
                     </motion.div>
                 </div>
             </div>
-        </section>
-        
+        </section >  
     );
 }
 

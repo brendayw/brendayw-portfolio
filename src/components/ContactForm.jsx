@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
 import { useForm, ValidationError } from '@formspree/react';
 import { useTypewriter } from '../hooks/useTypewritter';
 
@@ -38,16 +39,28 @@ const ContactForm = () => {
     }
 
     return (
-        <section className='w-full min-h-screen flex flex-col justify-center items-center py-14 px-2 sm:px-6 lg:px-8 space-y-6'>
-            <div className='w-full max-w-7xl mx-auto'>
-                <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF]'>
+        <section className='w-full md:min-h-screen flex flex-col justify-center items-center py-8 px-2 sm:px-6 lg:px-8 space-y-6 mb-12 md:mb-0'>
+            
+            <motion.div
+                className='w-full max-w-7xl mx-auto'
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
+                <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF] text-center md:text-left hover:text-[#CAC426]'>
                     Let's get in {animatedName}
                     <span className="animate-blink">{cursor}</span>
                 </h1>
-            </div>
+            </motion.div>
 
             {/* Formulario responsive */}
-            <form onSubmit={handleSubmit} className='w-full max-w-[600px] min-h-[400px] items-center grid grid-cols-1 xs:grid-cols-3 gap-4 shadow-lg shadow-[#222223] backdrop-blur-sm bg-[#1E1E1E] p-6 rounded-xl'>
+            <motion.form
+                onSubmit={handleSubmit}
+                className='w-full max-w-[600px] min-h-[400px] items-center grid grid-cols-1 xs:grid-cols-3 gap-4 shadow-lg shadow-[#222223] backdrop-blur-sm bg-[#1E1E1E] p-6 rounded-xl'
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+            >
                 
                 {/* Nombre */}
                 <label htmlFor="name" className='text-[#CAC426] text-start font-medium xs:col-span-1'>
@@ -129,7 +142,7 @@ const ContactForm = () => {
                         Submit
                     </button>
                 </div>
-            </form>
+            </motion.form>
         </section>
     )
 }
