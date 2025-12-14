@@ -39,28 +39,8 @@ const Hero = () => {
     });
     
     return (
-        <section id="hero" className='min-h-screen flex flex-col md:flex-row items-center justify-between w-full py-8 md:py-16 px-4 sm:px-6 lg:px-8'>
-            
-            {/* <motion.div 
-                className="relative top-10 w-[60%] min-w-[180px] max-w-[320px] md:max-w-[380px] aspect-square mb-12 md:mb-0"
-                animate={{
-                    y: ["0px", "-8px", "0px", "8px", "0px"],
-                }}
-                transition={{
-                    duration: 3,
-                    ease: "easeInOut",
-                    repeat: Infinity,
-                    repeatType: "loop"
-                }}
-            >
-                <img
-                    src={image}
-                    alt="Brenda's profile"
-                    className="w-full h-full object-cover rounded-[12%] border-2 border-[#CAC426]"
-                />
-            </motion.div> */}
-
-        
+        <section id="hero" className='md:min-h-screen flex flex-col md:flex-row items-center justify-between w-full py-8 md:py-16 px-4 sm:px-6 lg:px-8'>
+                    
             <div className='relative flex flex-col md:flex-row items-start md:items-center gap-8 mt-28 md:mt-0'>
                 <div className="relative w-full md:w-[70%] text-center md:text-left">
                     {/* md:left-20 mb-12 md:mb-0 md:px-8 */}
@@ -73,10 +53,6 @@ const Hero = () => {
                         Brenda {animatedName}.
                         <span className="animate-blink">{cursor}</span>
                     </h2>
-
-                    {/* <h3 className='text-sm md:text-md uppercase text-[#FFFEEC] mb-6'>
-                        Junior Backend | Software Developer
-                    </h3> */}
 
                     <motion.p
                         className="text-md sm:text-2xl text-[#FFFEEC] leading-relaxed"

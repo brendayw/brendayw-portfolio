@@ -15,11 +15,11 @@ const AboutMe = () => {
 
     return (
 
-        <section className="w-full min-h-screen py-14 px-4 sm:px-6 lg:px-8 mb-8">
+        <section className="w-full md:min-h-screen py-16 px-4 sm:px-6 lg:px-8 md:mb-8">
             
             {/* Titulo */}
             <div className="w-full max-w-7xl mx-auto mb-10">
-                <h1 className="text-2xl sm:text-3xl font-bold text-[#BCB4FF] text-left">
+                <h1 className="text-2xl sm:text-3xl font-bold text-[#BCB4FF] text-center md:text-left hover:text-[#CAC426]">
                     A little {animatedName}
                     <span className="animate-blink">{cursor}</span>
                 </h1>
@@ -104,13 +104,14 @@ const AboutMe = () => {
 
             {/* Mobile Flip */}
             <div className="md:hidden w-full flex justify-center mt-2">
+
                 <div 
                     className="w-full max-w-md perspective cursor-pointer"
                     onClick={() => setFlipped(!flipped)}
                     style={{ perspective: 1000 }}
                 >
                     <motion.div
-                        className="relative w-full h-96 rounded-3xl"
+                        className="relative w-full h-[475px] md:h-96  rounded-3xl"
                         animate={{ rotateY: flipped ? 180 : 0 }}
                         transition={{ duration: 0.6 }}
                         style={{ transformStyle: "preserve-3d" }}
