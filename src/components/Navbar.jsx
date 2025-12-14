@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import downloadImage from '../assets/icons8-download-48.png';
 
 const Navbar = () => {
@@ -37,10 +36,22 @@ const Navbar = () => {
           {/* Navbar links - Contenedor central */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="flex gap-4 lg:gap-8 items-center">
-              <a href='/' className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition">Home </a>
-              <a href='#projects' className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition">Projects</a>
-              <a href='#skills' className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition">Skills</a>
-              <a href='#contact' className="text-[#CAC426] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-6 hover:text-[18px] transition">Contact</a>
+              <a href='#about' className="text-[#FFFEEC] hover:text-[#BCB4FF]  rounded-2xl px-3 py-1 md:px-10">
+                <span className='text-[#BCB4FF]'>01. </span>
+                About
+              </a>
+              <a href='#projects' className="text-[#FFFEEC] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
+                <span className='text-[#BCB4FF]'>02. </span>
+                Projects
+              </a>
+              <a href='#skills' className="text-[#FFFEEC] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
+                <span className='text-[#BCB4FF]'>03. </span>
+                Skills
+              </a>
+              <a href='#contact' className="text-[#FFFEEC] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
+                <span className='text-[#BCB4FF]'>04. </span>
+                Contact
+              </a>
             </div>
           </div>
 
@@ -63,11 +74,11 @@ const Navbar = () => {
         <div className="md:hidden bg-[#222223] pb-4">
           <div className="px-2 pt-2 space-y-1">
             <a
-              href='/' 
+              href='#about' 
               onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
             >
-              Home
+              About
             </a>
             <a href='#projects'
               onClick={() => setIsOpen(false)}
