@@ -47,7 +47,7 @@ const TechStack = () => {
     skills.slice(10)
   ];
   
-  // Para mobile: filas de 3
+  // Para mobile: filas de 2
   const filasMobile = [
     skills.slice(0, 2),
     skills.slice(2, 4),
@@ -55,7 +55,8 @@ const TechStack = () => {
     skills.slice(6, 8),
     skills.slice(8, 10),
     skills.slice(10, 12),
-    skills.slice(12, 15),
+    skills.slice(12, 14),
+    skills.slice(14, 16),
   ];
   
   const filasAMostrar = isMobile ? filasMobile : filasDesktop;
@@ -89,7 +90,7 @@ const TechStack = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    gap: isMobile ? 1 : 1.5,
+                    gap: isMobile ? 1.2 : 1.5,
                     p: isMobile ? 1.5 : 2,
                     bgcolor: '#303030',
                     borderRadius: 6,
@@ -98,10 +99,10 @@ const TechStack = () => {
                   }}
                 >
                   <Box component="img" src={skill.icon} alt={skill.name}
-                    sx={{ width: isMobile ? 25 : 38, height: isMobile ? 25 : 38, objectFit: 'contain' }}
+                    sx={{ width: isMobile ? 28 : 38, height: isMobile ? 28 : 38, objectFit: 'contain' }}
                   />
 
-                  <Typography sx={{ color: '#D1D5DB', fontSize: isMobile ? 9 : 12, fontWeight: 600 }}>
+                  <Typography sx={{ color: '#D1D5DB', fontSize: isMobile ? 10 : 12, fontWeight: 600 }}>
                     {skill.name}
                   </Typography>
 
@@ -110,7 +111,7 @@ const TechStack = () => {
                     icon={<StarIcon fontSize="inherit" />}
                     emptyIcon={<StarIcon fontSize="inherit" />}
                     sx={{
-                      fontSize: isMobile ? '0.6rem' : '1rem',
+                      fontSize: isMobile ? '0.9rem' : '1rem',
                       color: '#CAC426',
                       '& .MuiRating-iconFilled': { color: '#CAC426' },
                       '& .MuiRating-iconEmpty': { borderColor: '#CAC4266c' },
