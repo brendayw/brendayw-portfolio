@@ -60,25 +60,25 @@ const ContactForm = () => {
             <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
     
                 {/* Columna izquierda: parrafo + contacto */}
-                <div className="w-[80%] flex flex-col gap-6 justify-center">
+                <div className="w-[100%] md:w-[80%] flex flex-col gap-6 justify-center">
                     <p className="text-lg text-gray-300 mb-4 text-justify">
                         I’m open to new opportunities and collaborations. 
                         Feel free to reach out anytime! Whether it’s a question, 
                         project proposal, or feedback, I’d love to hear from you.
                     </p>
 
-                    <div className='bg-[#1E1E1E] h-50 p-6 rounded-lg' >
-                        <p className="flex gap-6 items-center text-start text-md text-gray-300 p-2">
+                    <div className='bg-[#1E1E1E] h-50 p-4 md:p-6 rounded-lg' >
+                        <p className="flex gap-4 md:gap-6 items-center text-start xs:text-xs text-md text-gray-300 p-2">
                             <img src={Email} className='w-5 h-5' />
                             <a href="mailto:brendayw97@gmail.com" className="hover:text-[#CAC426] transition-colors">brendayw97@gmail.com</a>
                         </p>
-                        <p className="flex gap-6 items-center text-start text-md text-gray-300 p-2">
+                        <p className="flex gap-4 md:gap-6 items-center text-start text-md text-gray-300 p-2">
                             <img src={Linkedin} className='w-5 h-5'/>
                             <a href="https://www.linkedin.com/in/brendayw/" target="_blank" rel="noopener noreferrer" className="hover:text-[#CAC426] transition-colors">LinkedIn</a>
                         </p>
                     </div>
 
-                    <p className='flex gap-4 items-center justify-start italic'>
+                    <p className='flex text-sm gap-2 md:gap-4 items-center justify-start italic'>
                         <img src={Location} className='w-6 h-6'/>
                         Bahía Blanca, Buenos Aires, Argentina
                     </p>

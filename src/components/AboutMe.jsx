@@ -144,8 +144,12 @@ const AboutMe = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6 }}
                             >
-                                I am a <span className="text-[#CAC426] font-semibold">Junior Software Developer</span> with a strong interest in backend development. I work mainly with Java and Spring Boot, building REST APIs and backend logic with a
-                                focus on clarity, maintainability, and good practices.
+                                I'm a{" "}
+                                <span className="text-[#CAC426] font-semibold">
+                                    Junior Software Developer
+                                </span>{" "}
+                                focused on backend development with Java and Spring Boot, building REST APIs
+                                with an emphasis on clarity, maintainability, and good practices.
                             </motion.p>
                             <motion.p 
                                 className="text-justify mb-2"
@@ -153,9 +157,14 @@ const AboutMe = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.6 }}
                             >
-                                I hold an <span className="text-[#CAC426] font-semibold">Associate Degree in Programming</span> and have built backend projects involving data persistence,
-                                validations, and business logic. I enjoy understanding how systems
-                                work behind the scenes and how different components interact.
+                                I hold an{" "}
+                                <span className="text-[#CAC426] font-semibold">
+                                    Associate Degree in Programming
+                                </span>{" "}
+                                and have built 4+ backend projects involving data persistence,
+                                validations, authentication, and business logic. My background 
+                                in usability allows me to bring a user-centered perspective even
+                                to backend solutions.
                             </motion.p>
                             <motion.p 
                                 className="text-center text-[#BCB4FF] font-medium italic"

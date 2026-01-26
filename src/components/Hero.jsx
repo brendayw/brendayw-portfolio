@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTypewriter } from '../hooks/useTypewritter';
-import image from '../assets/portraits/brenda.png';
+import downloadImage from '../assets/icons8-download-48.png';
 import github from '../assets/icons8-github.svg';
 import githubLila from '../assets/icons8-github-lila.svg';
 import gmail from '../assets/icons8-gmail.svg';
@@ -97,6 +97,18 @@ const Hero = () => {
                         I build backend systems and REST APIs using <span className='text-[#CAC426] font-bold italic hover:text-[#BCB4FF]'>Java and Spring Boot, </span>
                         with a strong focus on focused on <span className="italic"> business logic, validations, and long-term maintainability. </span>
                     </motion.p>
+
+
+                    <div className="md:hidden flex justify-center  items-center gap-4 lg:gap-6 mt-4">
+                        <a href="/cv/CV Brenda Yañez - Backend Developer 2025.pdf" target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-[#CAC426] hover:bg-[#BCB4FF] text-[#222223] hover:text-[#FFFEEC] px-4 py-2 md:px-8 py-2 rounded-2xl transition flex items-center gap-2 text-sm md:text-base"
+                        >
+                            Resume
+                            <img src={downloadImage} className='w-4 h-4 md:w-5 md:h-5'></img>
+                        </a>
+                    </div>
+
                 </div>
 
                 {/* Iconos sociales - Responsive */}

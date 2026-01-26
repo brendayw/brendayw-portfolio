@@ -6,22 +6,16 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 shadow-sm">
-       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div id="logo" className="flex-shrink-0">
-            <img 
-              src="portraits/logo-brenda.png" 
-              alt="Brenda's Logo" 
-              className="w-8 h-8"
-            />
-          </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <a href='#hero' id="logo" className="flex-shrink-0">
+            <img src="portraits/logo-brenda.png" alt="Brenda's Logo" className="w-8 h-8" />
+          </a>
 
           <div className='flex md:hidden ml-auto z-50'>
-            <button 
-              onClick={() => setIsOpen(!isOpen)}
+            <button onClick={() => setIsOpen(!isOpen)} arial-label="Menu"
               className='text-[#CAC426] hover:text-[#BCB4FF] focus:outline-none p-2 rounded-md'
-              arial-label="Menu"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 {isOpen ? (
@@ -73,37 +67,27 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-[#222223] pb-4">
           <div className="px-2 pt-2 space-y-1">
-            <a
-              href='#about' 
-              onClick={() => setIsOpen(false)}
+            <a href='#about' onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
             >
               About
             </a>
-            <a href='#projects'
-              onClick={() => setIsOpen(false)}
+            <a href='#projects' onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
             >
               Projects
             </a>
-            <a 
-              href='#skills'
-              onClick={() => setIsOpen(false)}
+            <a href='#skills' onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
             >
               Skills
             </a>
-            <a 
-              href='#contact'
-              onClick={() => setIsOpen(false)}
+            <a href='#contact' onClick={() => setIsOpen(false)}
               className="block px-3 py-2 text-[#CAC426] hover:text-[#BCB4FF] hover:bg-[#CAC426] hover:bg-opacity-15 rounded-2xl" 
             >
               Contact
             </a>
-            <a
-              href="/cv/CV Brenda Yañez - Backend Developer 2025.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+            <a href="/cv/CV Brenda Yañez - Backend Developer 2025.pdf" target="_blank" rel="noopener noreferrer"
               className="block px-3 py-2 bg-[#CAC426] hover:bg-[#BCB4FF] text-[#222223] hover:text-[#FFFEEC] rounded-2xl transition flex items-center justify-center gap-2"
             >
               Resume
