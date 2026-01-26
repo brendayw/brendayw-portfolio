@@ -64,7 +64,7 @@ const Hero = () => {
                 <div className="relative w-full md:w-[70%] text-center md:text-left">
 
                     <motion.h1 
-                        className='text-lg italic text-[#FFFEEC] mb-4'
+                        className='text-lg italic text-gray-300 mb-4'
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -83,7 +83,7 @@ const Hero = () => {
                     </motion.h2>
 
                     <motion.p
-                        className="text-md sm:text-2xl text-[#FFFEEC] leading-relaxed"
+                        className="text-md sm:text-2xl text-gray-300 leading-relaxed"
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{
@@ -95,8 +95,7 @@ const Hero = () => {
                         }}
                     >
                         I build backend systems and REST APIs using <span className='text-[#CAC426] font-bold italic hover:text-[#BCB4FF]'>Java and Spring Boot, </span>
-                        focused on <span className="italic"> clean logic, maintainable code, and scalability. </span>
-                       
+                        with a strong focus on focused on <span className="italic"> business logic, validations, and long-term maintainability. </span>
                     </motion.p>
                 </div>
 

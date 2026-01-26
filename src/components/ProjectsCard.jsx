@@ -141,7 +141,7 @@ const ProjectsCard = () => {
                                         {project.name}
                                     </h3>
 
-                                    <p className="mt-2 text-sm sm:text-base text-[#FFFEEC]">
+                                    <p className="mt-2 text-sm sm:text-base text-gray-300">
                                         {project.description}
                                     </p>
 
@@ -168,7 +168,7 @@ const ProjectsCard = () => {
                                                     ) : (
                                                         <img src={icon} alt={tech} className="w-5 h-5 object-contain" title={tech}/>
                                                     )}
-                                                    <span className="text-xs text-white truncate">{tech}</span>
+                                                    <span className="text-xs text-gray-300 truncate">{tech}</span>
                                                 </div>
                                             </React.Fragment>
                                         );

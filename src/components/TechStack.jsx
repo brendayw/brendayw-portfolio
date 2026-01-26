@@ -19,7 +19,7 @@ const skills = [
   { name: 'Tailwind CSS', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
 
   // Databases & Cloud
-  { name: 'PostgreSQL', level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: 'PostgreSQL', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
   { name: 'MySQL', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
   { name: 'Supabase', level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
   { name: 'Oracle Cloud', level: 2, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" },
@@ -27,7 +27,7 @@ const skills = [
   // Tools & Others
   { name: 'Git', level: 4, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
   { name: 'GitHub Actions', level: 2.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" },
-  { name: 'Docker', level: 1.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+  { name: 'Docker', level: 2, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
   { name: 'Postman', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
 ];
 
@@ -81,7 +81,7 @@ const TechStack = () => {
                     sx={{ width: 38, height: 38, objectFit: 'contain' }}
                   />
 
-                  <Typography sx={{ color: '#FFFEEC', fontSize: 12, fontWeight: 600 }}>
+                  <Typography sx={{ color: '#D1D5DB', fontSize: 12, fontWeight: 600 }}>
                     {skill.name}
                   </Typography>
 
@@ -93,7 +93,7 @@ const TechStack = () => {
                       fontSize: '1rem',
                       color: '#CAC426',
                       '& .MuiRating-iconFilled': { color: '#CAC426' },
-                      '& .MuiRating-iconEmpty': { color: '#CAC4266c' },
+                      '& .MuiRating-iconEmpty': { borderColor: '#CAC4266c' },
                     }}
                   />
                 </Box>

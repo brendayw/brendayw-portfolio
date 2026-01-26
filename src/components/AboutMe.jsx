@@ -40,43 +40,48 @@ const AboutMe = () => {
                 
                 {/* Texto */}
                 <motion.div
-                    className="hidden md:block w-full max-w-7xl mx-auto bg-white/5 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10"
+                    className="hidden md:block w-full max-w-7xl mx-auto text-gray-300 bg-white/5 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true }}
                 >
                     <p className="text-justify text-lg">
-                        I am a{" "}
+                        I'm a{" "}
                         <span className="text-[#CAC426] font-semibold">
-                        Junior Software Developer
+                            Junior Software Developer
                         </span>{" "}
-                        with a strong interest in backend development. I work mainly with
-                        Java and Spring Boot, building REST APIs and backend logic with a
-                        focus on clarity, maintainability, and good practices.
+                        focused on backend development with Java and Spring Boot, building REST APIs
+                        with an emphasis on clarity, maintainability, and good practices.
                     </p>
 
                     <p className="text-justify text-lg">
                         I hold an{" "}
                         <span className="text-[#CAC426] font-semibold">
-                        Associate Degree in Programming
+                            Associate Degree in Programming
                         </span>{" "}
-                        and have built backend projects involving data persistence,
-                        validations, and business logic. I enjoy understanding how systems
-                        work behind the scenes and how different components interact.
+                        and have built 4+ backend projects involving data persistence,
+                        validations, authentication, and business logic. My background 
+                        in usability allows me to bring a user-centered perspective even
+                        to backend solutions.
                     </p>
 
                     <p className="text-justify text-lg">
-                        My background in usability and user experience allows me to approach
-                        development from a user-centered perspective, even when working on
-                        backend solutions.
+                        I am currently looking for a Junior Backend or Software Developer 
+                        role where I can continue learning, grow professionally, and 
+                        contribute to real-world projects. 
                     </p>
-
-                    <p className="text-justify text-lg">
-                        I am currently looking for a Junior Backend or Software Developer
-                        position where I can continue learning, grow professionally, and
-                        contribute to real projects.
+                    <p className="text-end italic text-sm mt-4">
+                        <a 
+                            href="/cv/CV Brenda Yañez - Backend Developer 2025.pdf" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-[#CAC426] font-semibold hover:text-[#BCB4FF] transition-colors"
+                        >
+                            Download my resume (PDF)
+                        </a>
                     </p>
+                    
                 </motion.div>
 
                 {/* Imagen */}

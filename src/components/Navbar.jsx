@@ -36,19 +36,19 @@ const Navbar = () => {
           {/* Navbar links - Contenedor central */}
           <div className="hidden md:flex flex-1 justify-center">
             <div className="flex gap-4 lg:gap-8 items-center">
-              <a href='#about' className="text-[#FFFEEC] hover:text-[#BCB4FF]  rounded-2xl px-3 py-1 md:px-10">
+              <a href='#about' className="text-gray-300 hover:text-[#BCB4FF]  rounded-2xl px-3 py-1 md:px-10">
                 <span className='text-[#BCB4FF]'>01. </span>
                 About
               </a>
-              <a href='#projects' className="text-[#FFFEEC] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
+              <a href='#projects' className="text-gray-300 hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
                 <span className='text-[#BCB4FF]'>02. </span>
                 Projects
               </a>
-              <a href='#skills' className="text-[#FFFEEC] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
+              <a href='#skills' className="text-gray-300 hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
                 <span className='text-[#BCB4FF]'>03. </span>
                 Skills
               </a>
-              <a href='#contact' className="text-[#FFFEEC] hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
+              <a href='#contact' className="text-gray-300 hover:text-[#BCB4FF] rounded-2xl px-3 py-1 md:px-10">
                 <span className='text-[#BCB4FF]'>04. </span>
                 Contact
               </a>
