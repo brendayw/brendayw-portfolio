@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Box, Grid, Typography, Rating } from '@mui/material';
+import { useTheme, useMediaQuery, Box, Grid, Typography, Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import { useTypewriter } from '../hooks/useTypewritter';
 
@@ -36,9 +36,28 @@ const TechStack = () => {
     delay: 100,
     infinite: false,
   });
-  const fila1 = skills.slice(0, 5);  // Java a JUnit
-  const fila2 = skills.slice(5, 10); // Swagger a MySQL
-  const fila3 = skills.slice(10); 
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  //desktop: filas de 5
+  const filasDesktop = [
+    skills.slice(0, 5),
+    skills.slice(5, 10),
+    skills.slice(10)
+  ];
+
+  // mobile: filas de 3
+  const filasMobile = [
+    skills.slice(0, 3),
+    skills.slice(3, 6),
+    skills.slice(6, 9),
+    skills.slice(9, 12),
+    skills.slice(12, 15),
+    skills.slice(15)
+  ];
+
+  const filasAMostrar = isMobile ? filasMobile : filasDesktop;
+  const gridSize = isMobile ? 4 : 2.4; // xs=4 (3 por fila), md=2.4 (5 por fila)
   
   return (
     <Box sx={{ py: 8, px: 4 }}>
@@ -56,10 +75,10 @@ const TechStack = () => {
         </Typography>
       </motion.div>
     
-      {[fila1, fila2, fila3].map((fila, index) => (
+      {filasAMostrar.map((fila, index) => (
         <Grid container spacing={2} key={index} sx={{ mb: 1.5, justifyContent: 'center', }}>
           {fila.map((skill, i) => (
-            <Grid item xs={6} sm={4} md={2.4} key={skill.name}>
+            <Grid item xs={gridSize} md={2.4} key={skill.name}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}      
                 animate={{ opacity: 1, y: 0 }}

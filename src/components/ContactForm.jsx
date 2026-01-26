@@ -68,11 +68,11 @@ const ContactForm = () => {
                     </p>
 
                     <div className='bg-[#1E1E1E] h-50 p-4 md:p-6 rounded-lg' >
-                        <p className="flex gap-4 md:gap-6 items-center text-start xs:text-xs text-md text-gray-300 p-2">
+                        <p className="flex gap-4 md:gap-6 items-center text-start md:text-md text-gray-300 p-2">
                             <img src={Email} className='w-5 h-5' />
                             <a href="mailto:brendayw97@gmail.com" className="hover:text-[#CAC426] transition-colors">brendayw97@gmail.com</a>
                         </p>
-                        <p className="flex gap-4 md:gap-6 items-center text-start text-md text-gray-300 p-2">
+                        <p className="flex gap-4 md:gap-6 items-center text-start md:text-md text-gray-300 p-2">
                             <img src={Linkedin} className='w-5 h-5'/>
                             <a href="https://www.linkedin.com/in/brendayw/" target="_blank" rel="noopener noreferrer" className="hover:text-[#CAC426] transition-colors">LinkedIn</a>
                         </p>
