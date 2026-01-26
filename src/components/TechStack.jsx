@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useTheme, useMediaQuery, Box, Grid, Typography, Rating } from '@mui/material';
+import { Box, Grid, Typography, Rating, useMediaQuery, useTheme } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import { useTypewriter } from '../hooks/useTypewritter';
 
@@ -36,28 +36,29 @@ const TechStack = () => {
     delay: 100,
     infinite: false,
   });
+  
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
-  //desktop: filas de 5
+  
+  // Para desktop: filas de 5
   const filasDesktop = [
     skills.slice(0, 5),
     skills.slice(5, 10),
     skills.slice(10)
   ];
-
-  // mobile: filas de 3
+  
+  // Para mobile: filas de 3
   const filasMobile = [
-    skills.slice(0, 3),
-    skills.slice(3, 6),
-    skills.slice(6, 9),
-    skills.slice(9, 12),
+    skills.slice(0, 2),
+    skills.slice(2, 4),
+    skills.slice(4, 6),
+    skills.slice(6, 8),
+    skills.slice(8, 10),
+    skills.slice(10, 12),
     skills.slice(12, 15),
-    skills.slice(15)
   ];
-
+  
   const filasAMostrar = isMobile ? filasMobile : filasDesktop;
-  const gridSize = isMobile ? 4 : 2.4; // xs=4 (3 por fila), md=2.4 (5 por fila)
   
   return (
     <Box sx={{ py: 8, px: 4 }}>
@@ -76,9 +77,9 @@ const TechStack = () => {
       </motion.div>
     
       {filasAMostrar.map((fila, index) => (
-        <Grid container spacing={2} key={index} sx={{ mb: 1.5, justifyContent: 'center', }}>
+        <Grid container spacing={isMobile ? 1 : 2} key={index} sx={{ mb: 1.5, justifyContent: 'center', }}>
           {fila.map((skill, i) => (
-            <Grid item xs={gridSize} md={2.4} key={skill.name}>
+            <Grid item xs={4} sm={4} md={2.4} key={skill.name}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}      
                 animate={{ opacity: 1, y: 0 }}
@@ -88,8 +89,8 @@ const TechStack = () => {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    gap: 1.5,
-                    p: 2,
+                    gap: isMobile ? 1 : 1.5,
+                    p: isMobile ? 1.5 : 2,
                     bgcolor: '#303030',
                     borderRadius: 6,
                     transition: 'all 0.2s',
@@ -97,10 +98,10 @@ const TechStack = () => {
                   }}
                 >
                   <Box component="img" src={skill.icon} alt={skill.name}
-                    sx={{ width: 38, height: 38, objectFit: 'contain' }}
+                    sx={{ width: isMobile ? 25 : 38, height: isMobile ? 25 : 38, objectFit: 'contain' }}
                   />
 
-                  <Typography sx={{ color: '#D1D5DB', fontSize: 12, fontWeight: 600 }}>
+                  <Typography sx={{ color: '#D1D5DB', fontSize: isMobile ? 9 : 12, fontWeight: 600 }}>
                     {skill.name}
                   </Typography>
 
@@ -109,7 +110,7 @@ const TechStack = () => {
                     icon={<StarIcon fontSize="inherit" />}
                     emptyIcon={<StarIcon fontSize="inherit" />}
                     sx={{
-                      fontSize: '1rem',
+                      fontSize: isMobile ? '0.6rem' : '1rem',
                       color: '#CAC426',
                       '& .MuiRating-iconFilled': { color: '#CAC426' },
                       '& .MuiRating-iconEmpty': { borderColor: '#CAC4266c' },
