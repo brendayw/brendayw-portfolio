@@ -1,119 +1,109 @@
-import React from 'react';
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { Box, Grid, Typography, Rating } from '@mui/material';
+import StarIcon from '@mui/icons-material/Star';
 import { useTypewriter } from '../hooks/useTypewritter';
 
-const skills = {
-  backend: [
-    { name: "Java", level: "Advanced" },
-    { name: "Spring Boot", level: "Advanced" },
-    { name: "Node.js/Express", level: "Intermediate" },
-  ],
-  frontend: [
-    { name: "JavaScript", level: "Intermediate" },
-    { name: "React", level: "Basic" },
-  ],
-  databases: [
-    { name: "PostgreSQL", level: "Intermediate" },
-    { name: "MySQL", level: "Intermediate" },
-  ],
-  tools: [
-    { name: "Git", level: "Intermediate" },
-    { name: "Postman", level: "Intermediate" },
-    { name: "Maven", level: "Intermediate" },
-  ],
-  methodologies: [
-    { name: "Scrum/Agile", level: "Basic" },
-  ],
-};
+const skills = [
+  //Backend 
+  { name: 'Java', level: 4, icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg' },
+  { name: 'Spring', level: 4, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" },
+  { name: 'Hibernate', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hibernate/hibernate-original.svg" },
+  { name: 'Maven', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg" },
+  { name: 'JUnit 5', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg" },
+  { name: 'Swagger', level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg"},
+
+  // JS / Node / Frontend
+  //{ name: 'JavaScript', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+  //{ name: 'Node.js', level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" },
+  { name: 'React', level: 2.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: 'Tailwind CSS', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+
+  // Databases & Cloud
+  { name: 'PostgreSQL', level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+  { name: 'MySQL', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+  { name: 'Supabase', level: 3, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" },
+  { name: 'Oracle Cloud', level: 2, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg" },
+
+  // Tools & Others
+  { name: 'Git', level: 4, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+  { name: 'GitHub Actions', level: 2.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" },
+  { name: 'Docker', level: 1.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" },
+  { name: 'Postman', level: 3.5, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" },
+];
 
 const TechStack = () => {
-  const { text: animatedName, cursor } = useTypewriter('Skills', {
+  const { text: animatedName, cursor } = useTypewriter('stack', {
     delay: 100,
     infinite: false,
   });
+  const fila1 = skills.slice(0, 5);  // Java a JUnit
+  const fila2 = skills.slice(5, 10); // Swagger a MySQL
+  const fila3 = skills.slice(10); 
   
   return (
-    <section className="w-full md:min-h-screen py-14 px-2 sm:px-4 lg:px-6 md:mb-0">
-      <motion.div
+    <Box sx={{ py: 8, px: 4 }}>
+       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <h1 className='text-2xl sm:text-3xl font-bold text-[#BCB4FF] text-center md:text-left hover:text-[#CAC426]'>
-          {animatedName}
+        <Typography align="center" gutterBottom sx={{ fontWeight: 600, fontSize: {xs: 24, sm: 30, }, 
+          color: '#BCB4FF', textAlign: { xs: 'center', md: 'left' }, '&:hover': { color: '#CAC426' },
+          mb: 4
+        }}>
+          My tech {animatedName}
           <span className="animate-blink">{cursor}</span>
-        </h1>
+        </Typography>
       </motion.div>
-      
-
-      <div className='flex justify-center items-start py-10'>
-        <div className="max-w-[700px] w-full grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4">
-          {Object.entries(skills).map(([category, items]) => (
-            <React.Fragment key={category}>
-              {/* Categoría - Sin cambios */}
+    
+      {[fila1, fila2, fila3].map((fila, index) => (
+        <Grid container spacing={2} key={index} sx={{ mb: 1.5, justifyContent: 'center', }}>
+          {fila.map((skill, i) => (
+            <Grid item xs={6} sm={4} md={2.4} key={skill.name}>
               <motion.div
-                className="md:col-span-1 flex items-center"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, y: 20 }}      
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 * i }}
               >
-                <h3 className="text-base sm:text-lg font-semibold text-[#FFFEEC] capitalize">
-                  {category}
-                </h3>
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: 1.5,
+                    p: 2,
+                    bgcolor: '#303030',
+                    borderRadius: 6,
+                    transition: 'all 0.2s',
+                    '&:hover': { transform: 'translateY(-4px)', boxShadow: 4 },
+                  }}
+                >
+                  <Box component="img" src={skill.icon} alt={skill.name}
+                    sx={{ width: 38, height: 38, objectFit: 'contain' }}
+                  />
+
+                  <Typography sx={{ color: '#FFFEEC', fontSize: 12, fontWeight: 600 }}>
+                    {skill.name}
+                  </Typography>
+
+                  <Rating name={`${skill.name}-rating`} value={skill.level}
+                    readOnly precision={0.5} max={5}
+                    icon={<StarIcon fontSize="inherit" />}
+                    emptyIcon={<StarIcon fontSize="inherit" />}
+                    sx={{
+                      fontSize: '1rem',
+                      color: '#CAC426',
+                      '& .MuiRating-iconFilled': { color: '#CAC426' },
+                      '& .MuiRating-iconEmpty': { color: '#CAC4266c' },
+                    }}
+                  />
+                </Box>
               </motion.div>
-
-              {/* Contenedor de skills - Versión responsive */}
-              <div className="md:col-span-3 w-full">
-                {/* Mobile: Flex que se ajusta automáticamente */}
-                <div className="flex md:hidden gap-2 flex-wrap">
-                  {items.map((skill, index) => (
-                    <motion.div
-                      key={`mobile-${category}-${index}`}
-                      className="bg-[#1E1E1E] p-3 rounded-lg shadow-lg flex-grow min-w-[calc(50%-5px)]"
-                      whileHover={{ scale: 1.03 }}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                    >
-                      <div className="text-center">
-                        <h4 className="text-sm sm:text-base font-medium text-[#CAC426]">{skill.name}</h4>
-                        <p className="text-xs sm:text-sm text-[#FFFEEC]">{skill.level}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* Desktop: Grid original (3 columnas iguales) */}
-                <div className="hidden md:grid grid-cols-3 gap-2">
-                  {items.map((skill, index) => (
-                    <motion.div
-                      key={`desktop-${category}-${index}`}
-                      className="bg-[#1E1E1E] p-3 rounded-lg shadow-lg h-full flex items-center justify-center"
-                      whileHover={{ scale: 1.05 }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                    >
-                      <div className="text-center">
-                        <h4 className="text-base font-medium text-[#CAC426]">{skill.name}</h4>
-                        <p className="text-sm text-[#FFFEEC]">{skill.level}</p>
-                      </div>
-                    </motion.div>
-                  ))}
-                  
-                  {items.length < 3 &&
-                    Array.from({ length: 3 - items.length }).map((_, i) => (
-                      <div key={`empty-${i}`} className="opacity-0 h-0" />
-                    ))
-                  }
-                </div>
-              </div>
-            </React.Fragment>
+            </Grid>
           ))}
-        </div>
-      </div>
-    </section >
+        </Grid>
+      ))}
+    </Box>
   );
-};
+}
 
 export default TechStack;
