@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTypewriter } from '../hooks/useTypewritter';
+import BankIT from '../assets/projects/bankit.jpg';
+import AlertIT from '../assets/projects/alertit.jpg';
+import Cognicare from '../assets/projects/cognicare.jpg';
 
 const iconClasses = {     
     // Iconos personalizados - usar SVG público o alternativas 
@@ -26,35 +29,47 @@ const iconClasses = {
 
 const projects = [
     {   id: "001", 
-        name: "BankIT", 
-        description: "A lightweight Java application that simulates loan repayment plans, calculating monthly payments, total interest, and amortization schedules.", 
-        techStack: ["java", "maven", "spring", "junit", "mysql", "jwt"], 
-        image: '/projects/nodemo.png', 
-        //detailsLink: "/cognicare", 
-        // liveLink: "", 
-        githubLink: "https://github.com/brendayw/bankIT" 
-    },
-    {   id: "002", 
-        name: "CogniCare", 
-        description: "A cognitive health platform with React frontend and Node.js/Express backend, powered by PostgreSQL via Supabase for real-time data.", 
-        techStack: ["react", "tailwind", "jwt", "node", "express", "postgre", "supabase"], 
-        image: "/projects/cognicare-2.png", 
-        //detailsLink: "/cognicare", 
-        liveLink: "https://cognicare-frontend.vercel.app/", 
-        githubLink: "https://github.com/brendayw/cognicare-backend" 
-    },
-    {   id: "003", 
         name: "AlertIT", 
-        description: "It is a Java-based weather alert system that detects heavy rain or strong wind conditions in a specific region of Argentina and automatically sends notifications via WhatsApp.", 
+        description: "An automated weather alert system that monitors conditions in specific regions " +
+            "of Argentina and instantly notifies users via WhatsApp about heavy rain or strong winds." +
+            " Aims to improve safety and preparedness by delivering timely, location-specific warnings" +
+            "during extreme weather events.",
         techStack: ["java", "spring", "weatherapi", "twilio", "scheduler"], 
-        image: '/projects/nodemo.png', 
+        image: AlertIT, 
         //detailsLink: "/alertit", 
         // liveLink: "", 
         githubLink: "https://github.com/brendayw/AlertIT" 
     },
+    {   id: "002", 
+        name: "BankIT", 
+        description: "A simulation tool for loan repayment plans that calculates monthly installments, total interest, " +
+             "and full amortization schedules with clear, visual breakdowns. Helps users better understand " +
+             "and plan their financial commitments with transparency and precision.",
+        techStack: ["java", "maven", "spring", "junit", "mysql", "jwt"], 
+        image: BankIT, 
+        //detailsLink: "/cognicare", 
+        // liveLink: "", 
+        githubLink: "https://github.com/brendayw/bankIT" 
+    },
+    {   id: "003", 
+        name: "CogniCare", 
+        description: "A full-stack platform for tracking cognitive health, allowing users to log daily" +
+            "performance metrics, view real-time updates, and receive personalized notifications." +
+            " Designed with secure access and an intuitive interface to support patients and professionals" +
+            "while prioritizing privacy and ease of use.", 
+        techStack: ["react", "tailwind", "jwt", "node", "express", "postgre", "supabase"], 
+        image: Cognicare, 
+        //detailsLink: "/cognicare", 
+        liveLink: "https://cognicare-frontend.vercel.app/", 
+        githubLink: "https://github.com/brendayw/cognicare-backend" 
+    },
+    
     {   id: "004", 
         name: "Sudoku Solver", 
-        description: "A GUI-based Sudoku solver built with Java and Swing, featuring both manual puzzle input and automatic solving via a backtracking algorithm. ", 
+        description: "An interactive desktop Sudoku application that lets users input puzzles manually" +
+            " or solve them automatically using an optimized backtracking algorithm." +
+            " Provides step-by-step visual feedback and a clean interface to make the solving" +
+            "process both educational and enjoyable.", 
         techStack: ["java"], 
         image: '/projects/nodemo.png', 
         //detailsLink: "/sudokusolver",
@@ -124,7 +139,7 @@ const ProjectsCard = () => {
                             >
                                 {/* Imagen */}
                                 <motion.div
-                                    className="w-full md:w-[400px] h-[225px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
+                                    className="w-full md:w-[400px] h-[250px] opacity-75 hover:opacity-100 rounded-lg shadow-lg overflow-hidden"
                                     whileHover={{ scale: 1.02 }}
                                     transition={{ type: "spring", stiffness: 120 }}
                                 >
