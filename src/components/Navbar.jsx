@@ -52,7 +52,7 @@ const Navbar = () => {
           {/* Resume button y toggle - Contenedor derecho */}
           <div className="hidden md:flex items-center gap-4 lg:gap-6">
             <a
-              href="/cv/CV Brenda Yañez - Backend Developer 2025.pdf"
+              href="/cv/CV Brenda Yañez - Software Developer 2026 eng.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#CAC426] hover:bg-[#BCB4FF] text-[#222223] hover:text-[#FFFEEC] px-4 py-2 md:px-8 py-2 rounded-2xl transition flex items-center gap-2 text-sm md:text-base"

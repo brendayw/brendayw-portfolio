@@ -73,7 +73,7 @@ const AboutMe = () => {
                     </p>
                     <p className="text-end italic text-sm mt-4">
                         <a 
-                            href="/cv/CV Brenda Yañez - Backend Developer 2025.pdf" 
+                            href="/cv/CV Brenda Yañez - Software Developer 2026 eng.pdf" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="text-[#CAC426] font-semibold hover:text-[#BCB4FF] transition-colors"
